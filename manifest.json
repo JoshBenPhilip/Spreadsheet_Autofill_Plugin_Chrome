@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "autofill using spreadsheet",
+  "version": "1.0",
+  "description": "Autofill forms based on data from a spreadsheet.",
+  "permissions": ["scripting", "storage", "activetab"],
+  "action": { "default_popup": "popup.html" },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["all_urls"],
+      "js": ["content.js"]
+    }
+  ]
+}
